@@ -9,7 +9,7 @@ class UserBook < ApplicationRecord
 
   enum :status, { unread: 0, reading: 1, finished: 2 }, prefix: true
 
-  acts_as_list scope: :user
+  acts_as_list scope: %i[user_id status]
 
   def swap_positions_with(item)
     transaction do
