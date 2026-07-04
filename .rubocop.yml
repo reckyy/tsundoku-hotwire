@@ -1,10 +1,10 @@
-require:
+plugins:
   - rubocop-rails
   - rubocop-performance
 
 # RuboCopの基本設定
 AllCops:
-  TargetRubyVersion: 3.3
+  TargetRubyVersion: 4.0
   NewCops: enable
   # 警告メッセージにCop名を表示する
   DisplayCopNames: true
