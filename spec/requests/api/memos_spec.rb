@@ -8,8 +8,8 @@ RSpec.describe 'API::Memos', type: :request do
 
   before do
     @book = FactoryBot.create(:book)
-    user_book = UserBook.create(user: current_user, book: @book)
-    heading = FactoryBot.create(:heading, user_book:)
+    @user_book = UserBook.create(user: current_user, book: @book)
+    heading = FactoryBot.create(:heading, user_book: @user_book)
     @memo = FactoryBot.create(:memo, heading:)
     authorization_stub
   end
@@ -17,6 +17,8 @@ RSpec.describe 'API::Memos', type: :request do
   describe 'API::MemosController#index' do
     context 'params is valid' do
       it 'returns a successful response' do
+        second_heading = FactoryBot.create(:heading, user_book: @user_book)
+        FactoryBot.create(:memo, heading: second_heading)
         params = { book_id: @book.id }
         get(api_memos_path, params:)
         expect(response).to have_http_status(:ok)

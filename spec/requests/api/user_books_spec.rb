@@ -17,6 +17,7 @@ RSpec.describe 'API::UserBooks', type: :request do
   describe 'API::BooksController#index' do
     context 'params is valid' do
       it 'returns a successful response' do
+        second_user_book
         get(api_user_books_path)
         expect(response).to have_http_status(:ok)
       end
