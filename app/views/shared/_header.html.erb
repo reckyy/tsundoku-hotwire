@@ -1,0 +1,14 @@
+<header class="h-[60px] border-b border-gray-200 bg-white">
+  <div class="mx-auto flex h-full max-w-[960px] items-center justify-between px-4">
+    <%= link_to root_path, class: "flex items-center gap-2" do %>
+      <%= image_tag "Tsundoku.png", alt: "ロゴ", size: "28x28" %>
+      <span class="text-xl font-bold">Tsundoku</span>
+    <% end %>
+    <%# TODO(auth): ログアウト・公開ページ・退会を含むドロップダウンを Stimulus (dropdown_controller) で実装する %>
+    <button type="button" class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-gray-100" aria-label="userMenu">
+      <%= image_tag current_user.avatar_url, alt: current_user.name, class: "h-5 w-5 rounded-full" %>
+      <span class="text-sm font-medium"><%= current_user.name %></span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+    </button>
+  </div>
+</header>

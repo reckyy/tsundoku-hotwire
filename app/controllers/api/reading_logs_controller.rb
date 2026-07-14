@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module API
-  class ReadingLogsController < ApplicationController
+  class ReadingLogsController < BaseController
     def index
       render json: DailyReadingLogResource.new(current_user).serializable_hash
     end

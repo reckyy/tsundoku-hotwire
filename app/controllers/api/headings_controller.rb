@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module API
-  class HeadingsController < ApplicationController
+  class HeadingsController < BaseController
     def create
       user_book = current_user.user_books.find(params.expect(:user_book_id))
       heading = Heading.new(user_book:, number: params[:number].to_i, title: '', memo_attributes: {})

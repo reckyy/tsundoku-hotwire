@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module API
-  class UsersController < ApplicationController
+  class UsersController < BaseController
     JWT_EXPIRATION = 30.days
 
     before_action :verify_google_id_token, only: %i[create]
