@@ -1,0 +1,10 @@
+<%# locals: (book:) %>
+<%# SPA版 BookItem の移植。book は title / author / cover_image_url に応答するオブジェクト %>
+<%# TODO(bookshelf-wiring): カード全体をメモページへのリンクに差し替える %>
+<div>
+  <%= image_tag book.cover_image_url, alt: book.title, class: "mx-auto h-[200px] w-[141px] rounded-lg object-cover" %>
+  <p class="mt-0.5 text-center text-sm font-bold"><%= book.title %></p>
+  <% if book.author.present? %>
+    <p class="mt-0.5 text-center text-sm">著者 : <%= book.author %></p>
+  <% end %>
+</div>

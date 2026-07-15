@@ -1,0 +1,19 @@
+<%# locals: (user_name:, unread_user_books:, reading_user_books:, finished_user_books:) %>
+<%# SPA版 BookShelfPageContent（/bookshelf/edit）の移植。本棚編集ページ全体のコンテンツ %>
+<%# TODO(bookshelf-wiring): コントローラへの配線と、タブ切り替え（hidden の付け替え）の Stimulus 実装を行う %>
+<div class="mx-auto my-4 max-w-[960px]">
+  <h1 class="text-center text-[1.625rem] font-bold"><%= user_name %>さんの本棚</h1>
+  <p class="pt-4 text-center text-dimmed">ドラッグ&ドロップで本の順番を入れ替えたり、削除したりできます。</p>
+  <div class="mt-10">
+    <%= render "bookshelf/filter_segmented_control" %>
+  </div>
+  <div class="mt-5">
+    <%= render "bookshelf/sortable_book_list", user_books: unread_user_books, empty_message: "「本を追加」から読む本を追加しましょう！" %>
+  </div>
+  <div class="mt-5 hidden">
+    <%= render "bookshelf/sortable_book_list", user_books: reading_user_books, empty_message: "今読んでいる本はありません。" %>
+  </div>
+  <div class="mt-5 hidden">
+    <%= render "bookshelf/sortable_book_list", user_books: finished_user_books, empty_message: "読み終わった本はありません。" %>
+  </div>
+</div>

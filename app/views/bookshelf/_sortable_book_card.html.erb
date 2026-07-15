@@ -1,0 +1,23 @@
+<%# locals: (book:) %>
+<%# SPA版 DndList の行カードの移植。book は title / author / cover_image_url に応答するオブジェクト %>
+<%# TODO(bookshelf-wiring): Stimulus でドラッグ&ドロップの並び替えと、削除ボタンからの確認モーダル表示を実装する %>
+<div class="my-4 cursor-grab rounded-lg border border-gray-200 bg-white p-5 shadow-xs">
+  <div class="flex gap-2">
+    <%# 並び替えハンドル（SPA版はカード全体がドラッグ可能。Hotwire版ではハンドルを明示する） %>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 self-center text-dimmed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+    <div class="grid flex-1 grid-cols-12 gap-4">
+      <div class="col-span-2">
+        <%= image_tag book.cover_image_url, alt: book.title, class: "w-[60px]" %>
+      </div>
+      <div class="col-span-8">
+        <p><%= book.title %></p>
+        <p class="text-sm text-dimmed"><%= book.author %></p>
+      </div>
+      <div class="col-span-1 col-start-12 flex items-center justify-center">
+        <button type="button" class="flex h-7 w-7 items-center justify-center rounded-sm bg-danger/10 text-danger hover:bg-danger/15" aria-label="deleteBook">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l16 0"/><path d="M10 11l0 6"/><path d="M14 11l0 6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

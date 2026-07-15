@@ -1,0 +1,12 @@
+<%# locals: (user_books:, empty_message:) %>
+<%# SPA版 BookItems の移植。フィルタ1分類分の本をグリッド表示する %>
+<%# 呼び出し側で bookshelf/filter_segmented_control の下に mt-5 相当の余白を空けて配置する想定 %>
+<% if user_books.any? %>
+  <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
+    <% user_books.each do |user_book| %>
+      <%= render "bookshelf/book_card", book: user_book.book %>
+    <% end %>
+  </div>
+<% else %>
+  <p class="mt-5 text-center"><%= empty_message %></p>
+<% end %>
