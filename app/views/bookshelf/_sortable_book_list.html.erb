@@ -1,0 +1,9 @@
+<%# locals: (user_books:, empty_message:) %>
+<%# SPA版 DndList の一覧部分の移植。フィルタ1分類分の本を行カードで縦に並べる %>
+<% if user_books.any? %>
+  <% user_books.each do |user_book| %>
+    <%= render "bookshelf/sortable_book_card", book: user_book.book %>
+  <% end %>
+<% else %>
+  <p class="mt-5 text-center"><%= empty_message %></p>
+<% end %>

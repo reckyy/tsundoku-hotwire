@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  /* Mantine版の配色を踏襲: 本文 #37352f / 補助テキスト #868e96 / プライマリ #228be6 */
+  /* Mantine版の配色を踏襲: 本文 #37352f / 補助テキスト #868e96 / プライマリ #228be6 / 危険 #fa5252 */
   --color-ink: #37352f;
   --color-dimmed: #868e96;
   --color-brand: #228be6;
+  --color-danger: #fa5252;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
