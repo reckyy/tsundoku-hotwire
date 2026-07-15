@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module API
-  class UserBooksController < ApplicationController
+  class UserBooksController < BaseController
     before_action :set_user_book, only: %i[update position destroy]
 
     def index

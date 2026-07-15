@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module API
-  class MemosController < ApplicationController
+  class MemosController < BaseController
     def index
       user_book = UserBook
                   .includes(:book, headings: :memo)

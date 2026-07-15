@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'home#show'
+
   post '/api/auth/callback/google', to: 'api/users#create'
   namespace :api do
     resources :memos, only: %i[index update]

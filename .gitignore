@@ -52,3 +52,6 @@
 !.codex/hooks.json
 !.codex/rules/
 !.codex/skills/
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

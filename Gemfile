@@ -7,12 +7,17 @@ gem 'acts_as_list'
 gem 'alba'
 gem 'bootsnap', require: false
 gem 'googleauth'
+gem 'importmap-rails'
 gem 'jwt'
 gem 'ostruct'
 gem 'pg'
+gem 'propshaft'
 gem 'puma', '~> 7.2', '>= 7.2.1'
 gem 'rack-cors'
 gem 'rails', '8.0.5'
+gem 'stimulus-rails'
+gem 'tailwindcss-rails'
+gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
